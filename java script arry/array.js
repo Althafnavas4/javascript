@@ -24,8 +24,26 @@ function Display(){
         edit_td.appendChild(edit_btn)
         tr.appendChild(edit_td)
         
+        let del_td=document.createElement("td")
+        let del_btn=document.createElement("button")
+        del_btn.innerHTML='DELETE'
+        del_btn.onclick=function(){
+            delete_data(element.id)
+        }
+        del_td.appendChild(del_btn)
+        tr.appendChild(del_td)
+
         tbody.appendChild(tr)
     })
+}
+
+function delete_data(id){
+    data=data.filter((user)=>{
+        if(user.id!=id){
+            return user
+        }
+    })
+    Display()
 }
 
 document.getElementById('add_form').addEventListener('submit',function(event){
@@ -49,6 +67,24 @@ function edit_form(id){
     
 
 }
+document.getElementById("edit_form").addEventListener("submit",function(event){
+    event.preventDefault()
+    let id=document.getElementById9("e_id").value
+    let name=document.getElementById9("e_name").value
+    let age=document.getElementById9("e_age").value
+
+    data=data.map((user)=>{
+        if(user.id==edit_var){
+            return{...user,id:id,name:name,age:age}
+
+        }
+        return user
+    })
+        document.getElementById("add_form").style.display='block'
+        document.getElementById("edit_form").style.display='none'
+
+    
+})
 
 
 
