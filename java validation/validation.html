@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form id="form">
+        <input type="text" placeholder="name" required>
+        <input type="tel" name="" placeholder="mobile number" id="no" required>
+        <h3 id="h3"></h3>
+        <input type="submit" value="Add">
+    </form>
+    <script>
+        document.getElementById('form').addEventListener('submit',function(event){
+            event.preventDefault()
+            let no = document.getElementById('no').value
+            let h3=document.getElementById('h3')
+            if(/^[6-9]\d{9}/.test(no)){
+                h3.innerHTML='Valid'
+                h3.style.color='green'
+            }
+            else{
+                h3.innerHTML='Invalid'
+                h3.style.color='red'
+            }
+        })
+    </script> -->
+
+    <form id="form">
+        <input type="text" placeholder="name" required>
+        <input type="password" name="" placeholder="password" id="no" required>
+        <h3 id="h3"></h3>
+        <input type="submit" value="Add">
+    </form>
+    <script>
+        document.getElementById('form').addEventListener('submit',function(event){
+            event.preventDefault()
+            let no = document.getElementById('no').value
+            let h3=document.getElementById('h3')
+            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(no)){
+                h3.innerHTML='Valid'
+                h3.style.color='green'
+            }
+            else{
+                h3.innerHTML='Invalid'
+                h3.style.color='red'
+            }
+        })
+    </script>
+</body>
+</html>
