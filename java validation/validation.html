@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<style>
+    li{
+        color: red;
+    }
+</style>
 <body>
     <!-- <form id="form">
         <input type="text" placeholder="name" required>
@@ -28,18 +34,56 @@
         })
     </script> -->
 
+    
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+    
+    
+    
     <form id="form">
         <input type="text" placeholder="name" required>
-        <input type="password" name="" placeholder="password" id="no" required>
+        <input type="password" name="" placeholder="password" id="psw" required>
         <h3 id="h3"></h3>
+        <ul>
+            <li id="len">length min 8 letter</li>
+            <li id="cap">min 1 cap letter </li>
+            <li id="sm ">min 1 sm letter</li>
+            <li id="spl">min 1 cap letter </li>
+
+            
+        </ul>
         <input type="submit" value="Add">
     </form>
     <script>
+        let psw=document.getElementById('pswd')
+        let len = document.getElementById('len')
+        let cap = document.getElementById('cap')
+        let sm = document.getElementById('sm')
+        let no = document.getElementById('no')
+        let spl = document.getElementById('spl')
+
+
+
+            pswd.addEventListener('input',function(){
+                let password=pwd.value
+                len.style.color=password.length>8 ? 'green' : 'red'
+                cap.style.color=/[A-Z]/.test (password ) ?'green' : 'red'
+                sm.style.color=/[a-z]/.test (password ) ?'green' : 'red'
+                no.style.color=/\d/.test (password ) ?'green' : 'red'
+                spl.style.color=/[@#$%&*]/.test(password) ? 'green' : 'red' 
+
+            }) 
+
+
+
+
+
+
         document.getElementById('form').addEventListener('submit',function(event){
             event.preventDefault()
             let no = document.getElementById('no').value
             let h3=document.getElementById('h3')
-            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(no)){
+            if(/^[A-Za-z\d@$!%*?&]{8,}$/.test(no)){
                 h3.innerHTML='Valid'
                 h3.style.color='green'
             }
