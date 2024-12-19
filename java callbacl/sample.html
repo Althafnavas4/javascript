@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // callback
+
+
+    // function demo(callback){
+    //     console.log('helo');
+    //     callback()
+
+    // }
+
+
+
+    // function sample(){
+    //     console.log('its a callback fun');
+    // }
+
+    // demo(sample)
+
+
+    // // callback hell
+
+
+
+
+    // function demo(callback){
+    //     console.log('helo');
+    //     callback()(sample1)
+
+    // }
+
+
+
+    // function sample(){
+    //     console.log('its a callback fun');
+    // }
+
+    // callback()
+
+    // function sample1(){
+    //     console.log('sample1');
+    // }
+
+    // demo(sample1)
+
+
+
+// promise
+
+// const sample = new Promise((resolve, reject) => {
+//     if(10==10){
+//         resolve ("true")
+//     }
+//     else{
+//     reject("false")
+//     }
+// })
+// sample.then(result=>console.log(result)).catch(error=>console.log(error)).finally(()=>console.log('complate'))
+
+
+// async awite
+async function  Demo() {
+    const promises = new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve('data collected',2000))
+
+
+    })
+    const result = await promises
+    console.log(result);
+    
+}
+Demo()
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
